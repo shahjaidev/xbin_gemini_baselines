@@ -67,8 +67,7 @@ class graphnn(object):
                                             #[B, N_node, N_node]
             self.X1 = X1
             self.msg1_mask = msg1_mask
-            embed1 = graph_embed(X1, msg1_mask, N_x, N_embed, N_o, ITER_LEVEL,
-                    Wnode, Wembed, W_output, b_output)  #[B, N_x]
+            embed1 = graph_embed(X1, msg1_mask, N_x, N_embed, N_o, ITER_LEVEL,  Wnode, Wembed, W_output, b_output)  #[B, N_x]
 
             X2 = tf.placeholder(Dtype, [None, None, N_x])
             msg2_mask = tf.placeholder(Dtype, [None, None, None])
@@ -101,7 +100,9 @@ class graphnn(object):
     def init(self, LOAD_PATH, LOG_PATH):
         config = tf.ConfigProto()
         config.gpu_options.allow_growth = True
-        sess = tf.Session(config=config)
+        #sess = tf.Session(config=config)
+        #Changed inorder to allow operations to run on CPU : "allow_soft_placement=True"
+        sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True, log_device_placement=True))
         saver = tf.train.Saver()
         self.sess = sess
         self.saver = saver

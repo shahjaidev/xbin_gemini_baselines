@@ -45,7 +45,8 @@ if __name__ == '__main__':
     print(args)
     print("=================================")
 
-    os.environ["CUDA_VISIBLE_DEVICES"]=args.device
+    #%env CUDA_VISIBLE_DEVICES=0
+    os.environ["CUDA_VISIBLE_DEVICES"]="-1"
     Dtype = args.dtype
     NODE_FEATURE_DIM = args.fea_dim
     EMBED_DIM = args.embed_dim
@@ -64,7 +65,7 @@ if __name__ == '__main__':
     SAVE_FREQ = 5
     DATA_FILE_NAME = './data/acfgSSL_{}/'.format(NODE_FEATURE_DIM)
     SOFTWARE=('openssl-1.0.1f-', 'openssl-1.0.1u-')
-    OPTIMIZATION=('-O0', '-O1','-O2','-O3')
+    OPTIMIZATION= ('-O0', '-O1','-O2','-O3')
     COMPILER=('armeb-linux', 'i586-linux', 'mips-linux')
     VERSION=('v54',)
 
