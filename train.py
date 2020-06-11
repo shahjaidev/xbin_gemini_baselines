@@ -38,6 +38,7 @@ parser.add_argument('--log_path', type=str, default=None,
 
 
 
+
 if __name__ == '__main__':
     args = parser.parse_args()
     args.dtype = tf.float32
@@ -46,7 +47,7 @@ if __name__ == '__main__':
     print("=================================")
 
     #%env CUDA_VISIBLE_DEVICES=0
-    os.environ["CUDA_VISIBLE_DEVICES"]="-1"
+    os.environ["CUDA_VISIBLE_DEVICES"]="0"
     Dtype = args.dtype
     NODE_FEATURE_DIM = args.fea_dim
     EMBED_DIM = args.embed_dim

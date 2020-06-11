@@ -31,7 +31,6 @@ def graph_embed(X, msg_mask, N_x, N_embed, N_o, iter_level, Wnode, Wembed, W_out
 
     g_embed = tf.reduce_sum(cur_msg, 1)   #[batch, embed_dim]
     output = tf.matmul(g_embed, W_output) + b_output
-    
     return output
 
 
@@ -44,7 +43,7 @@ class graphnn(object):
                     N_o,
                     ITER_LEVEL,
                     lr,
-                    device = '/gpu:0'
+                    device = '/device:XLA_GPU:0'
                 ):
 
         self.NODE_LABEL_DIM = N_x
