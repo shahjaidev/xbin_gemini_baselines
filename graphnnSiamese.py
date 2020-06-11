@@ -43,7 +43,7 @@ class graphnn(object):
                     N_o,
                     ITER_LEVEL,
                     lr,
-                    device = '/device:XLA_GPU:0'
+                    device = '/gpu:0'
                 ):
 
         self.NODE_LABEL_DIM = N_x
