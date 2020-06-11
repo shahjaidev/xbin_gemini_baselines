@@ -38,6 +38,7 @@ parser.add_argument('--log_path', type=str, default=None,
 
 
 
+
 if __name__ == '__main__':
     args = parser.parse_args()
     args.dtype = tf.float32
