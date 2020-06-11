@@ -49,9 +49,9 @@ class graphnn(object):
 
         self.NODE_LABEL_DIM = N_x
 
-        tf.reset_default_graph()
+        tf.compat.v1.reset_default_graph()
         with tf.device(device):
-            Wnode = tf.Variable(tf.truncated_normal(
+            Wnode = tf.Variable(tf.random.truncated_normal(
                 shape = [N_x, N_embed], stddev = 0.1, dtype = Dtype))
             Wembed = []
             for i in range(depth_embed):
