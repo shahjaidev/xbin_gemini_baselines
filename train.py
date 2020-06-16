@@ -46,8 +46,9 @@ if __name__ == '__main__':
     print(args)
     print("=================================")
 
+
     #%env CUDA_VISIBLE_DEVICES=0
-    os.environ["CUDA_VISIBLE_DEVICES"]="0"
+    os.environ["CUDA_VISIBLE_DEVICES"]="-1"
     Dtype = args.dtype
     NODE_FEATURE_DIM = args.fea_dim
     EMBED_DIM = args.embed_dim
