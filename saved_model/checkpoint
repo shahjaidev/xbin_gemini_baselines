@@ -1,0 +1,5 @@
+model_checkpoint_path: "graphnn-model_best"
+all_model_checkpoint_paths: "graphnn-model-5"
+all_model_checkpoint_paths: "graphnn-model-10"
+all_model_checkpoint_paths: "graphnn-model-15"
+all_model_checkpoint_paths: "graphnn-model_best"
